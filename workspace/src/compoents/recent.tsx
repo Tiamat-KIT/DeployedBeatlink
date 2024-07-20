@@ -1,5 +1,5 @@
 import React from "react";
-import CustomButton from "./custom-button";
+import CustomButton from "../components/custom-button";
 
 const Recent = () => {
   return (
