@@ -5,10 +5,12 @@ import React from "react";
 import EditNameid from "../../../components/edit-nameid";
 import CustomButton from "../../../components/custom-button";
 import { SignOutButton } from "@clerk/nextjs";
+import NavBer from "../../../components/NavBar"
 
 const page = () => {
   return (
     <div>
+      <NavBer />
       <div
         style={{
           display: "flex",

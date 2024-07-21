@@ -1,3 +1,5 @@
+"use client";
+/* eslint-disable @next/next/no-img-element */
 import { UserButton } from "@clerk/nextjs"
 import type React from "react"
 import { useState } from "react"
