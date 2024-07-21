@@ -104,7 +104,7 @@ const NavBar: React.FC = () => {
 				global
 			>{`
 			body {
-				margin-top: 64px; /* ナビゲーションバーの高さに合わせて調整 */
+				margin-top: 70px; /* ナビゲーションバーの高さに合わせて調整 */
 			}
 		`}</style>
 		</>
