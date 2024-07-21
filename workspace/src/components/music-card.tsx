@@ -1,25 +1,20 @@
 "use client";
 
-import useTracks from "@/hooks/useTracks";
 import React from "react";
-import { Control, useWatch } from "react-hook-form";
-import { PostData } from "./PostForm";
-
 interface MusicCardProps {
-  control: Control<PostData, any>,
+  id: string,
+  isLoading: boolean
 }
 
-const MusicCard: React.FC<MusicCardProps> = ({control}) => {
-  const MusicName = useWatch({control,name: "MusicTitle",defaultValue: "ファタール"})
-  const {data,isLoading} = useTracks(MusicName,1)
-  const MusicId = data?.tracks[0].id
+const MusicCard: React.FC<MusicCardProps> = ({id,isLoading}) => {
+
   return (
     <div className="flex justify-center items-center mb-4">
 
       {!isLoading ? <iframe
         className="rounded-lg"
         style={{ borderRadius: '12px' }}
-        src={`https://open.spotify.com/embed/track/${MusicId}?utm_source=generator`}
+        src={`https://open.spotify.com/embed/track/${id}?utm_source=generator`}
         width="90%"
         height="170"
         allowFullScreen
