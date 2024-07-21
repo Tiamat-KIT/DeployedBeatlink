@@ -28,7 +28,8 @@ declare module "process" {
                 /** @param Vercelにデプロイした先の公開URL */
                 NEXT_PUBLIC_VERCEL_URL: string
 
-
+                /** @param Gemini_API_Key */
+                NEXT_PUBLIC_GEMINI_API_KEY: string
             }
         }
     }
