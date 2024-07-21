@@ -17,13 +17,13 @@ const Page = () => {
 	// const musicTitle: string = "Music title";
 	// const aritist: string = "Artist name";
 
-  const {isLoading,isAuthenticated} = useStoreUserEffect()
+  /* const {isLoading,isAuthenticated} = useStoreUserEffect()
   const {user} = useUser()
   const [id,setId] = useState<Id<"users">>()
   if(isLoading && isAuthenticated){
     const result = use(convex_client.query(api.users.getUser,{id: user?.id!}))
     setId(result?._id)
-  }
+  } */
 
 	const MusicUrl =
 		"https://open.spotify.com/embed/track/78W4mTLIh4qoLu92W4IQhO?utm_source=generator&theme=0"
@@ -34,8 +34,6 @@ const Page = () => {
 			<NavBar />
 			<div className="flex justify-center px-5 safari-hack w-full">
 				<div className="max-w-screen-lg w-full p-8">
-            {/* {typeof id !== "undefined" && <PostForm id={id!}/>} */}
-
             <PostForm /* id={id!} *//>
 
 						{/* 前のページに戻る */}

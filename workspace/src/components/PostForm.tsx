@@ -4,6 +4,7 @@ import useTracks from "@/hooks/useTracks";
 import { useMutation, useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 import { Id } from "../../convex/_generated/dataModel";
+import convex_client from "@/CovexSubscriptionClient";
 
 export interface PostData  {
     MusicTitle: string,
@@ -11,7 +12,7 @@ export interface PostData  {
     Comment: string
 }
 
-export default function PostForm(/* {id}:{id: Id<"users">} */){
+export default function PostForm(){
     const { register, control, formState: { dirtyFields }, handleSubmit } = useForm<PostData>({
         defaultValues: {
             MusicTitle: "ファタール",
@@ -22,16 +23,9 @@ export default function PostForm(/* {id}:{id: Id<"users">} */){
 
     const MusicName = useWatch({control,name: "MusicTitle",defaultValue: "ファタール"})
     const {data: track,isLoading} = useTracks(MusicName,1)
-    /* const MutatePost= useMutation(api.post.createPost) */
     
-    
-    const onSubmit = (data: PostData) => {
-        /* MutatePost({
-            user_id: id,
-            likes: 0,
-            music_id: track?.tracks[0].id!,
-            comments: []
-        }) */
+    const onSubmit = async(data: PostData) => {
+
     }
 
     return (
