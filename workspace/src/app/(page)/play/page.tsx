@@ -6,7 +6,7 @@ const Page = () => {
 	const Router = useRouter()
 
 	return (
-		<div className="outer-container h-screen bg-white">
+		<div className="outer-container h-screen bg-white flex flex-col items-center">
 			<NavBar />
 			<div className="max-w-screen-lg w-full p-8">
 				<div className="flex justify-center items-center mb-4">
@@ -20,9 +20,16 @@ const Page = () => {
 						allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
 						loading="lazy"
 						title="Spotify Embed"
-					></iframe>
+					/>
 				</div>
-
+				<div className="flex flex-col space-y-4 items-center">
+					<a
+						href="/playlist"
+						className="btn text-center mb-4 bg-navy text-white w-60"
+					>
+						プレイリストへ
+					</a>
+				</div>
 				{/* ボタン */}
 				<div className="flex flex-col space-y-4 items-center">
 					<button
