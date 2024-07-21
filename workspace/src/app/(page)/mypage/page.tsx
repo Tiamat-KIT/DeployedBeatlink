@@ -15,18 +15,18 @@ const page = () => {
 					flexDirection: "column",
 				}}
 			>
-				<div style={{ display: "flex", alignItems: "center" }}>
-					<img src="./arrow-black-image.png" />
-					<p
-						className=" w-screen flex justify-center items-center"
+				{/* <div style={{ display: "flex", alignItems: "center" }}>
+					<h1
+						className="w-screen flex justify-center"
 						style={{
 							fontWeight: "bold",
 							fontSize: "30px",
 							marginTop: "20px",
+							color: "black",
 						}}
 					>
 						マイページ
-					</p>
+					</h1> */}
 				</div>
 				<NameId
 					name="名前"
@@ -34,7 +34,7 @@ const page = () => {
 				/>
 				<PostsView />
 			</div>
-		</div>
+	</div>
 	)
 }
 
