@@ -35,15 +35,6 @@ const Page = () => {
 						</div>
 					</div>
 					<div className="mb-10" />
-					<div className="flex justify-center">
-						<button
-							className="btn btn-outline w-60"
-							type="button"
-							onClick={() => Router.back()}
-						>
-							戻る
-						</button>
-					</div>
 				</div>
 			</div>
 		</div>
