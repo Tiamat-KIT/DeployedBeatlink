@@ -14,9 +14,9 @@ export default function Home() {
   if(isAuthenticated) {redirect("/list")}
 
   return (
-    <div className="h-screen flex items-center justify-center flex-col gap-y-4">
-      <h1 className="text-xl font-semibold">
-        ようこそ！{isAuthenticated ? user?.fullName : "ゲスト"}さん
+    <div className="h-screen flex items-center justify-center flex-col gap-y-4 bg-gradient-to-tl from-purple-500 via-cyan-400 to-blue-500">
+      <h1 className="text-5xl font-extrabold text-white">
+        Hello! BeatLink!
       </h1>
       <div className="flex gap-4">
         {!isAuthenticated ? (
