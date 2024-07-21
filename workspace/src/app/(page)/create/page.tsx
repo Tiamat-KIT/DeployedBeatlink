@@ -1,16 +1,8 @@
 "use client"
 import "../../globals.css"
-import { redirect, useRouter } from "next/navigation"
+import { useRouter } from "next/navigation"
 import NavBar from "../../../components/NavBar"
-import MusicCard from "../../../components/music-card"
 import PostForm from "@/components/PostForm"
-import { useUser } from "@clerk/clerk-react"
-import { useQuery } from "convex/react"
-import { api } from "../../../../convex/_generated/api"
-import { use, useState } from "react"
-import { Id } from "../../../../convex/_generated/dataModel"
-import { useStoreUserEffect } from "@/hooks/useStoreUserEffect"
-import convex_client from "@/CovexSubscriptionClient"
 
 const Page = () => {
 	// const albumImageUrl: string = "/sample/Himawari.jpg";
