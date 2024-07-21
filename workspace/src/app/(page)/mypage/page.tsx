@@ -53,7 +53,7 @@ const Page = () => {
 					</div>
 
 					<div className="mb-10"></div>
-					<h2 className="text-left mb-4 text-xl text-black font-bold mb-8">お気に入りの曲</h2>
+					<h2 className="text-left text-xl text-black font-bold mb-8">お気に入りの曲</h2>
 
 
 					<div className="w-full max-w-screen-lg mb-10">
