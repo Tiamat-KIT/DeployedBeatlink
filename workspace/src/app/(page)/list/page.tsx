@@ -18,7 +18,7 @@ const Page = () => {
 							<IframeCard
 								key={Index}
 								musicUrl={`https://open.spotify.com/embed/track/${Card.id}?utm_source=generator`}
-								commentTitle={`${Index + 1}個目`}
+								commentTitle={`${Card.name}`}
 							/>
 						)): "Loading..."}
 					</div>
