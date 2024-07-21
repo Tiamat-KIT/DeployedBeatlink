@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 // InputImage/index.tsx
 // 画像を添付するinput
 
