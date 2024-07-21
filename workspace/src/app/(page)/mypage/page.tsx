@@ -15,26 +15,13 @@ const page = () => {
 					flexDirection: "column",
 				}}
 			>
-				{/* <div style={{ display: "flex", alignItems: "center" }}>
-					<h1
-						className="w-screen flex justify-center"
-						style={{
-							fontWeight: "bold",
-							fontSize: "30px",
-							marginTop: "20px",
-							color: "black",
-						}}
-					>
-						マイページ
-					</h1> */}
-				</div>
 				<NameId
 					name="名前"
 					id="id"
 				/>
 				<PostsView />
 			</div>
-	</div>
+		</div>
 	)
 }
 
