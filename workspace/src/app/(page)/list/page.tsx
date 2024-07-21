@@ -2,26 +2,11 @@
 import { useRouter } from "next/navigation"
 import NavBar from "../../../components/NavBar"
 import IframeCard from "../../../components/ifamecard"
+import useTracks from "@/hooks/useTracks"
 
 const Page = () => {
 	const Router = useRouter()
-	const CardData = [
-		{
-			musicUrl:
-				"https://open.spotify.com/embed/track/78W4mTLIh4qoLu92W4IQhO?utm_source=generator&theme=0",
-			commentTitle: "Comment for Music Title 1",
-		},
-		{
-			musicUrl:
-				"https://open.spotify.com/embed/track/78W4mTLIh4qoLu92W4IQhO?utm_source=generator&theme=0",
-			commentTitle: "Comment for Music Title 2",
-		},
-		{
-			musicUrl:
-				"https://open.spotify.com/embed/track/78W4mTLIh4qoLu92W4IQhO?utm_source=generator&theme=0",
-			commentTitle: "Comment for Music Title 3",
-		},
-	]
+	const {data,isLoading} = useTracks("キタニタツヤ",10)
 
 	return (
 		<div className="outer-container h-screen bg-white">
@@ -29,13 +14,13 @@ const Page = () => {
 			<div className="flex justify-center px-5 safari-hack">
 				<div className="max-w-screen-lg p-8">
 					<div className="flex flex-wrap justify-center">
-						{CardData.map((Card, Index) => (
+						{!isLoading ? data?.tracks.map((Card, Index) => (
 							<IframeCard
 								key={Index}
-								musicUrl={Card.musicUrl}
-								commentTitle={Card.commentTitle}
+								musicUrl={`https://open.spotify.com/embed/track/${Card.id}?utm_source=generator`}
+								commentTitle={`${Index + 1}個目`}
 							/>
-						))}
+						)): "Loading..."}
 					</div>
 
 					{/*ペジネーション*/}
