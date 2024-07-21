@@ -1,100 +1,51 @@
 "use client"
 /* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable @next/next/no-page-custom-font */
-/* eslint-disable @next/next/google-font-display */
 /* eslint-disable @next/next/no-img-element */
-import { SignOutButton } from "@clerk/clerk-react";
-import type React from "react";
-import { useState } from "react";
+import NameId from '../../../components/name-id'
+import PostsView from '../../../components/posts-view'
+import Genre from '../../../components/genre'
+import Recent from '../../../components/recent'
 
-const NavBar: React.FC = () => {
-  const [IsOpen, SetIsOpen] = useState(false);
-
-  const HandleToggle = () => {
-    SetIsOpen(!IsOpen);
-  };
-
+const page = () => {
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a
-          href="list"
-          className="flex items-center space-x-3 rtl:space-x-reverse"
-        >
-          <img
-            src="https://flowbite.com/docs/images/logo.svg"
-            className="h-8"
-            alt="Flowbite Logo"
-          />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            Beetlink
-          </span>
-        </a>
-        <button
-          onClick={HandleToggle}
-          type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          aria-controls="navbar-default"
-          aria-expanded={IsOpen ? "true" : "false"}
-        >
-          <span className="sr-only">Open main menu</span>
-          <svg
-            className="w-5 h-5"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 17 14"
-          >
-            <path
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M1 1h15M1 7h15M1 13h15"
-            />
-          </svg>
-        </button>
-        <div
-          className={`w-full md:block md:w-auto ${IsOpen ? "block" : "hidden"}`}
-          id="navbar-default"
-        >
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            <li>
-              <a
-                href="/list"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                aria-current="page"
-              >
-                Posts
-              </a>
-            </li>
-            <li>
-              <a
-                href="/create"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Create post
-              </a>
-            </li>
-            <li>
-              <a
-                href="/play"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Music
-              </a>
-            </li>
-            <li>
-              <a
-                href="/mypage"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                My page
-              </a>
-            </li>
-          </ul>
+    <>
+    <div style={{
+        display:"flex",
+        alignItems:"center",
+        justifyContent:"center",
+        flexDirection:"column"
+        }}>
+        <div style={{display:"flex",alignItems:"center"}}>
+            <img  src='./arrow-black-image.png'/>
+                <p  className=" w-screen flex justify-center items-center"
+                style={{
+                    fontWeight:"bold", 
+                    fontSize:"30px",
+                    marginTop:"20px"
+                    }}>
+                    マイページ
+                </p>
         </div>
-      </div>
-    </nav>
-  );
-};
+        <NameId name="名前" id="id"/>
+        <PostsView />
+        <div className='mt-10'>
+         <Genre />
+        </div>
+        <Recent />
+        <a href='./edit-mypage'>
+        <button className="btn"
+        style={{
+          fontWeight:"lighter",
+           margin:"100px"
+          }}
+        >アカウントを編集する</button>
+        </a>
+        <a style={{color:"red",marginBottom:"100px"}} href='./login'>ログアウト</a>
+        </div>
+  </>
+        
+    
+  )
+}
+
+export default page

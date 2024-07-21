@@ -1,4 +1,6 @@
-"use client"
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
+"use client";
 import NavBar from "@/components/NavBar"
 import CustomButton from "../../../components/custom-button"
 import PlaylistMenu from "../../../components/playlist-menu"

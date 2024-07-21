@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
+"use client";
 import React from "react";
 import EditNameid from "../../../components/edit-nameid";
-import CustomButton from "@/components/custom-button";
+import CustomButton from "../../../components/custom-button";
 import { SignOutButton } from "@clerk/nextjs";
 
 const page = () => {
